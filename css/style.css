@@ -90,9 +90,7 @@ ol {
  ul {
     list-style-type: square;
  }
- .rowList ul li {
-    display: inline-block;
- }
+ 
 
 @media (prefers-reduced-motion: reduce) {
     html{
@@ -125,6 +123,14 @@ ol {
         margin: auto;
         width: 65%;
     }
+    .pet {
+        padding: 10px;
+        border: 2px black solid;
+    }
+    .grid-basil {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
     .active {
         color: black;
         font-weight: bold;
@@ -141,8 +147,11 @@ ol {
    nav ul {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    margin: 0px;
    }
    nav ul li {
+    display: block;
     text-align: center;
    }
    nav a {
@@ -159,8 +168,10 @@ ol {
     display: grid;
     grid-template-columns: 1fr 1fr;
    }
-   
-    .likes ul li {
+   .pet ul {
+    margin-left: 15px;
+   }
+    .pet ul li {
         position: relative;
         margin: auto 20px;
         padding-left: 10px;
