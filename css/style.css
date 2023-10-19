@@ -79,11 +79,10 @@ nav ul li{
     align-items: center;
     width:100%;
 }
-nav ul, .likes ul {
+nav ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-left: 50px;
-
 }
 ol {
     list-style-type: decimal;
@@ -91,11 +90,15 @@ ol {
  ul {
     list-style-type: square;
  }
+ .rowList ul li {
+    display: inline-block;
+ }
+
 @media (prefers-reduced-motion: reduce) {
     html{
         scroll-behavior: auto;
     }
-  *{
+  * {
     animation: none;
     background-attachment: fixed;
     transition: none;
@@ -108,9 +111,11 @@ ol {
     header{
       background-attachment: initial;
     }
+    .animated {
+        animation: none;
+    }
 }
-
-@media screen and (max-width: 800px){
+@media screen and (min-width: 300px) and (max-width: 800px){
     html, body{
         overflow-x: hidden;
         max-width: 100%;
@@ -133,6 +138,16 @@ ol {
     text-align: center;
     display: block;
    }
+   nav ul {
+    display: flex;
+    flex-direction: column;
+   }
+   nav ul li {
+    text-align: center;
+   }
+   nav a {
+    margin: 10px;
+   }
    p {
     margin: 10px;
    }
@@ -144,9 +159,16 @@ ol {
     display: grid;
     grid-template-columns: 1fr 1fr;
    }
+   
     .likes ul li {
         position: relative;
-        top: -22px;
+        margin: auto 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        
+    }
+    span {
+        position: relative;
     }
  h4 {
     margin: 10px;
@@ -155,4 +177,19 @@ ol {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+.animated {
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+@keyframes slidein {
+    from {
+        margin-left:100%;
+        width: 300%;
+    }
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
 }
